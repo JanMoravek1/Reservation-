@@ -14,15 +14,8 @@ namespace RezervacniSystem.Models
         public int Start { get; set; }
         public int End { get; set; }
 
-        
-        public Order(string name, int requestedCapacity, List<string> requestedEquipment, int start, int end)
+        public Order()
         {
-            Name = name;
-            RequestedCapacity = requestedCapacity;
-            RequestedEquipment = requestedEquipment;
-            Start = start;
-            End = end;
         }
- 
     }
 }

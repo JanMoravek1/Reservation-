@@ -19,7 +19,7 @@ namespace RezervacniSystem.Services
 
         }
 
-        public void createReservation(Order o)
+        public Reservation createReservation(Order o)
         {
             Room nalezenyPokoj = najdiVhodnyPokoj(o);
 
@@ -27,13 +27,14 @@ namespace RezervacniSystem.Services
             if (nalezenyPokoj == null)
             {
                 Console.WriteLine("Reservation nebyla vytvořena");
-                return;
+                return null;
             }
 
 
             Reservation r = new Reservation(o.Name, o.Start, o.End);
             nalezenyPokoj.Reservations.Add(r);
             Console.WriteLine("Reservation vytvořena, Cislo pokoje =" + nalezenyPokoj.Id);
+            return r;
 
         }
 

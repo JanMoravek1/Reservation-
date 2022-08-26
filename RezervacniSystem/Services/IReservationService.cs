@@ -8,6 +8,6 @@ namespace RezervacniSystem.Services
 {
     public interface IReservationService
     {
-        public void createReservation(Order o);
+        public Reservation createReservation(Order o);
     }
 }

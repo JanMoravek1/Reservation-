@@ -23,8 +23,16 @@ namespace RezervacniSystem.Controllers
 
         public IActionResult Create()
         {
-            _reservationService.createReservation(new Order("Pepa", 1, new List<string> { }, 5, 7));
-            return new JsonResult("Objednavka vytvorena");
+            //Reservation r = _reservationService.createReservation(new Order{Name:"Pepa");
+            // return new JsonResult(r);
+            return new JsonResult(null);
+        }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] Order o)
+        {
+            Reservation r = _reservationService.createReservation(o);
+            return new JsonResult(r);
         }
 
     }
